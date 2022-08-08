@@ -4,5 +4,12 @@ block content
   h1= title
   p Welcome to #{title}
   form(action="/", method="POST")
-    input(type="lead_email", placeholder="Enter your email address")
+    input(type="lead_email", name = 'lead_email', placeholder="Enter your email address")
     button(type="submit") Submit
+  if leads 
+    h1 Leads
+    for lead in leads 
+      p 
+        span #{lead.email}
+        =" "
+        a(href="/lead/" + lead.id) Details 
