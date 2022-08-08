@@ -27,7 +27,7 @@ exports.show_lead = function(req, res, next) {
     });
 }
 
-exports.show__edit_lead = function(req, res, next) {
+exports.show_edit_lead = function(req, res, next) {
     models.Leads.findOne({
         where: {
             id: req.params.lead_id,
@@ -35,4 +35,19 @@ exports.show__edit_lead = function(req, res, next) {
     }).then(leads => {
         res.render('lead/edit_lead', {lead: leads});
     });
+}
+
+exports.edit_lead = function(req, res, next) {
+    req.params.lead_id
+    req.body.lead_email
+
+    return models.Leads.update({
+        email: req.body.lead_email
+    }, {
+        where: {
+            id: req.params.lead_id
+        }
+    }).then(result => {
+        res.redirect('/lead/' + req.params.lead_id);
+    })
 }
