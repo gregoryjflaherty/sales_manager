@@ -26,3 +26,13 @@ exports.show_lead = function(req, res, next) {
         res.render('lead', {lead: leads});
     });
 }
+
+exports.show__edit_lead = function(req, res, next) {
+    models.Leads.findOne({
+        where: {
+            id: req.params.lead_id,
+        }
+    }).then(leads => {
+        res.render('lead/edit_lead', {lead: leads});
+    });
+}
