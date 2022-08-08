@@ -13,3 +13,7 @@ block content
         span #{lead.email}
         =" "
         a(href="/lead/" + lead.id) Details 
+        =" "
+        button(onclick=`deleteLead(${lead.id})`) Delete
+  script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+  script(src='javascripts/lead.js')
