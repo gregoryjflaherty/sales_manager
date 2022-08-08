@@ -1,3 +1,5 @@
-# sales_manager
+# Sales Manager
 
-CRUD applicatio written using Express.js to track and monitor sales leads
+CRUD application written using Express.js to track and monitor sales leads
+PostgreSQL database
+Sequelizer used as ORM 
